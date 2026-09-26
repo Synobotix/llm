@@ -28,7 +28,7 @@ testpaths = ["tests"]
 pythonpath = ["src", "."]
 
 [tool.mutmut]
-source_paths = ["src/llm/", "scripts/"]
+source_paths = ["src/llm/", "scripts/", "tokenizer/"]
 pytest_add_cli_args_test_selection = ["tests/unit/", "tests/mutation/"]
 also_copy = ["tests/"]
 timeout_multiplier = 5.0

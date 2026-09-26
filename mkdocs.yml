@@ -1,0 +1,152 @@
+# =============================================================================
+# llm — MkDocs Configuration
+# Framework: Diátaxis (tutorials / how-to / reference / explanation)
+# Theme: Material for MkDocs
+# =============================================================================
+
+site_name: llm
+site_description: A custom LLM
+site_author: Synobotix Team
+# site_url: https://example.com/
+
+repo_name: Synobotix/llm-dataset
+repo_url: https://github.com/Synobotix/llm-dataset
+edit_uri: edit/main/docs/
+
+# -----------------------------------------------------------------------------
+# Theme
+# -----------------------------------------------------------------------------
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/chip
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+# -----------------------------------------------------------------------------
+# Plugins
+# -----------------------------------------------------------------------------
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - tags
+
+# -----------------------------------------------------------------------------
+# Markdown Extensions
+# -----------------------------------------------------------------------------
+markdown_extensions:
+  # Structure
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+  # Code
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# -----------------------------------------------------------------------------
+# Navigation (Diátaxis)
+# -----------------------------------------------------------------------------
+nav:
+  - Home: index.md
+
+# -----------------------------------------------------------------------------
+# Extra
+# -----------------------------------------------------------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Synobotix/llm-dataset
+    - icon: fontawesome/brands/python
+      link: https://www.python.org/
+  generator: false
+
+extra_css:
+  - assets/css/extra.css
+
+extra_javascript:
+  - javascripts/mermaid.mjs
+
+# -----------------------------------------------------------------------------
+# Copyright
+# -----------------------------------------------------------------------------
+copyright: >
+  Copyright &copy; 2026 Synobotix Team —
+  <a href="#__consent">Privacy</a>
+
+# -----------------------------------------------------------------------------
+# Validation
+# -----------------------------------------------------------------------------
+validation:
+  links:
+    absolute_links: relative_to_docs
+    unrecognized_links: warn
+  omitted_files: warn
+  not_found: warn
+  anchors: warn

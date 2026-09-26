@@ -1,0 +1,157 @@
+name: "Research & Development"
+description: "Propose or track long-term research, spikes, or exploratory initiatives"
+title: "[R&D] "
+labels:
+  - "type:rnd"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Research & Development
+
+        Use this form for **exploratory work, technical spikes, feasibility studies,
+        or long-term research initiatives**.
+        R&D issues are expected to reduce uncertainty and produce actionable outcomes.
+
+  - type: textarea
+    id: research_objective
+    attributes:
+      label: Research Objective
+      description: |
+        Clearly state the goal of this research.
+        What question(s) are you trying to answer?
+      placeholder: |
+        Evaluate whether technology X can support use case Y at scale
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_space
+    attributes:
+      label: Problem Space / Context
+      description: |
+        Describe the current context, constraints, and why this research is needed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: hypotheses
+    attributes:
+      label: Hypotheses
+      description: |
+        List assumptions or hypotheses this research aims to validate or invalidate.
+      placeholder: |
+        - Hypothesis 1: ...
+        - Hypothesis 2: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: |
+        Define what is included in this research effort.
+    validations:
+      required: true
+
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of Scope
+      description: |
+        Explicitly list what will NOT be explored.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Strategic importance and timing
+      options:
+        - P0 - Strategic (blocks major decisions)
+        - P1 - High (important input for roadmap)
+        - P2 - Medium (useful but not urgent)
+        - P3 - Low (opportunistic exploration)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Risk Severity if Unanswered
+      description: Impact of NOT conducting this research
+      options:
+        - S0 - Critical (high risk of wrong strategic decision)
+        - S1 - Major (significant technical or product risk)
+        - S2 - Moderate (suboptimal choices likely)
+        - S3 - Minor (limited downside)
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodology
+    attributes:
+      label: Methodology
+      description: |
+        Describe how the research will be conducted.
+        Examples: spike, prototype, benchmark, literature review.
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Expected Deliverables
+      description: |
+        Tangible outputs expected from this research.
+      placeholder: |
+        Report, prototype, benchmark results, recommendation
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: Success Criteria
+      description: |
+        Define how success will be measured.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & Unknowns
+      description: |
+        Technical, organizational, or security risks.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: |
+        All items must be satisfied before closing this R&D issue.
+      options:
+        - label: Research objectives answered
+          required: true
+        - label: Findings documented and shared
+          required: true
+        - label: Clear recommendation provided (go / no-go / follow-up)
+          required: true
+        - label: Security implications reviewed
+          required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Links, prior art, references, or related discussions.
+    validations:
+      required: false

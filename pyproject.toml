@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "1erLLM"
+version = "0.1.0"
+description = ""
+authors = ["Mamy-cloud <mamycompteprofessionnel@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = {version = "^2.14.0", source = "pytorch"}
+numpy = "<2.3"
+datasets = "^5.0.1"
+transformers = "^5.17.0"
+tqdm = "^4.70.1"
+
+[tool.poetry.dev-dependencies]
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

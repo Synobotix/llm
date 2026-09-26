@@ -1,0 +1,128 @@
+name: "Documentation"
+description: "Report missing, incorrect, or incomplete documentation"
+title: "[Docs] "
+labels:
+  - "type:documentation"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Documentation Issue
+
+        Use this form to report **missing, outdated, unclear, or incorrect documentation**.
+        Documentation quality is considered part of the product and follows the same triage rigor.
+
+  - type: textarea
+    id: affected_area
+    attributes:
+      label: Affected Documentation Area
+      description: |
+        Specify where the issue exists.
+      placeholder: |
+        README.md, API reference, onboarding guide, architecture docs
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Documentation Issue
+      description: |
+        Describe what is wrong, missing, ambiguous, or misleading.
+      placeholder: |
+        The documentation states that [...], but in reality [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Documentation
+      description: |
+        Describe what the documentation should state instead.
+      placeholder: |
+        The documentation should clearly explain [...]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Business and delivery priority
+      options:
+        - P0 - Critical (blocks usage or onboarding)
+        - P1 - High (causes frequent confusion or errors)
+        - P2 - Medium (important clarification)
+        - P3 - Low (minor improvement)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact / Severity
+      description: Impact of incorrect or missing documentation
+      options:
+        - S0 - Blocking (leads to critical misuse or security risk)
+        - S1 - Major (leads to incorrect implementation)
+        - S2 - Moderate (causes confusion, slows development)
+        - S3 - Minor (cosmetic or wording issue)
+    validations:
+      required: true
+
+  - type: textarea
+    id: target_audience
+    attributes:
+      label: Target Audience
+      description: |
+        Who is affected by this documentation issue?
+      placeholder: |
+        Frontend developers, backend developers, new joiners
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_changes
+    attributes:
+      label: Suggested Changes
+      description: |
+        Provide concrete suggestions, examples, or rewritten sections if possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Sources
+      description: |
+        Links to code, issues, discussions, or external references that clarify the correct behavior.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: |
+        All items must be satisfied before closing this issue.
+      options:
+        - label: Documentation reflects actual system behavior
+          required: true
+        - label: Examples (if applicable) are correct and tested
+          required: true
+        - label: Security-sensitive documentation reviewed
+          required: true
+        - label: No ambiguity remains for the target audience
+          required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Screenshots, diagrams, or historical context.
+    validations:
+      required: false

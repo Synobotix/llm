@@ -1,0 +1,152 @@
+name: "Feature Request"
+description: "Propose a new feature or a significant enhancement"
+title: "[Feature] "
+labels:
+  - "type:feature"
+  - "status:triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+
+        Use this form to propose a **new feature or major enhancement** for ai-ota.
+        This repository uses strict triage rules. Incomplete or low-quality submissions will be closed.
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: Problem Statement
+      description: |
+        Clearly describe the problem or limitation this feature addresses.
+        Focus on *why* this is needed, not *how* to implement it.
+      placeholder: |
+        We currently cannot [...], which leads to [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        Describe the feature at a high level.
+        Avoid implementation details unless strictly necessary.
+      placeholder: |
+        Introduce a mechanism that allows [...]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Business and delivery priority
+      options:
+        - P0 - Critical (blocks roadmap or training pipeline)
+        - P1 - High (important for near-term delivery)
+        - P2 - Medium (valuable but not urgent)
+        - P3 - Low (nice to have)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact / Severity
+      description: Impact if this feature is NOT implemented
+      options:
+        - S0 - Blocking (framework unusable or training impossible)
+        - S1 - Major (significant limitation or risk)
+        - S2 - Moderate (workarounds exist)
+        - S3 - Minor (limited impact)
+    validations:
+      required: true
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: Stakeholders / Users
+      description: |
+        Identify who benefits from this feature (teams, roles, personas).
+      placeholder: |
+        VLA researchers, robotics engineers, ML engineers, contributors
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Define objective, testable criteria for feature acceptance.
+        This section is mandatory and used for validation.
+      placeholder: |
+        - Given ..., when ..., then ...
+        - Feature is considered complete when ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-Goals
+      description: |
+        Explicitly state what is out of scope for this feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: |
+        List alternative solutions or approaches and why they were rejected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: |
+        External systems, teams, libraries, or prior work required.
+      placeholder: |
+        Depends on issue #123, JaxSim v0.4, Gazebo Harmonic
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & Trade-offs
+      description: |
+        Technical, product, or organizational risks.
+        Pay special attention to risks related to the selected RRC.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: |
+        All items must be satisfied before the feature can be closed.
+      options:
+        - label: Acceptance criteria are fully met
+          required: true
+        - label: Documentation updated (if applicable)
+          required: true
+        - label: Tests added or updated according to RRC level
+          required: true
+        - label: Safety review completed (required for RRC3)
+          required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Mockups, diagrams, links to discussions, or prior art.
+    validations:
+      required: false

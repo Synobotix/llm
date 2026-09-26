@@ -1,0 +1,140 @@
+name: "Bug Report"
+description: "Report a defect or unintended behavior"
+title: "[Bug] "
+labels:
+  - "type:bug"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+
+        Use this form to report **unexpected or incorrect behavior**.
+        Bugs are triaged based on impact, severity.
+        Incomplete reports will be closed.
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        Provide **clear, ordered steps** to reproduce the issue.
+      placeholder: |
+        1. Go to [...]
+        2. Click [...]
+        3. Observe [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: |
+        Describe what should happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: |
+        Describe what actually happens.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Delivery and business priority
+      options:
+        - P0 - Critical (production blocker)
+        - P1 - High (severe impact, workaround exists)
+        - P2 - Medium (functional issue)
+        - P3 - Low (minor annoyance)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Technical and user impact
+      options:
+        - S0 - Blocking (system unusable or unsafe)
+        - S1 - Major (core functionality broken)
+        - S2 - Moderate (partial degradation)
+        - S3 - Minor (cosmetic or edge case)
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Provide relevant environment details.
+      placeholder: |
+        Browser/version, OS, feature flag state, deployment environment
+    validations:
+      required: true
+
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regression?
+      description: |
+        Indicate whether this bug worked previously.
+      placeholder: |
+        Yes, last working version was [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact Analysis
+      description: |
+        Who is affected and how?
+        Include potential security or data integrity concerns.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs_evidence
+    attributes:
+      label: Logs / Evidence
+      description: |
+        Logs, screenshots, stack traces, or recordings.
+        Redact sensitive data.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: |
+        All conditions must be satisfied before closing.
+      options:
+        - label: Root cause identified
+          required: true
+        - label: Fix implemented and reviewed
+          required: true
+        - label: Tests added or updated
+          required: true
+        - label: Security review completed
+          required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Related issues, discussions, or historical context.
+    validations:
+      required: false
